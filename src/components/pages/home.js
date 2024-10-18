@@ -1,81 +1,51 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-//components  
 import NavBar from '../nav-bar/nav-bar';
-import {
-    Link
-  } from 'react-router-dom';
 
-class Home extends Component {
-    componentWillReceiveProps() {
-        document.title = "Jeremy Shaw Software Developer Portfolio";
-    }
+const Home = (props) => {
+    useEffect(() => {
+        document.title = "Soham Satpute Software Developer Portfolio";
+    }, []);
 
-    componentDidMount() {
-        document.title = "Jeremy Shaw Software Developer Portfolio";
-    }
-
-  render() {
     return (
         <div className="home-page">
-            <NavBar page="home"/>
+            <NavBar page="home" />
             <div className="home-top-container">
                 <div className="home-top-left">
-                    <picture className="home-top-left-image">
-                        <source srcSet="img/webp/profile.webp" type="image/webp" />
-                        <source srcSet="img/png/profile.png" type="image/jpeg" /> 
-                        <img src="img/png/profile.png" alt="Jeremy Shaw" />
-                    </picture>
+                    <img
+                        src={require('../../images/Screenshot 2024-09-22 164828.png')} 
+                        alt="Soham Satpute"
+                        className="profile-image"
+                    />
                 </div>
                 <div className="home-top-right">
-                    <h2>Jeremy Shaw</h2>
+                    <h2>Soham Satpute</h2>
                     <ul>
                         <li>
                             <div className="icon is-small"><i className="fa fa-user"></i></div>
                             <span>Full Stack Developer</span>
                         </li>
                         <li>
-                            <div className="icon is-small"><i className="fa fa-location-arrow"></i></div>
-                            <span>Rotorua, New Zealand</span>
+                            <div className="icon is-small"><i className="fa fa-map-marker-alt"></i></div>
+                            <span>THANE</span>
                         </li>
                         <li>
                             <div className="icon is-small"><i className="fa fa-graduation-cap"></i></div>
-                            <span>BSc, Major in Computer Science</span>
+                            <span>Engineering Student, VESIT</span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div className="home-bottom">
                 <div className="home-bottom-text">
-                    <p>I'm Jeremy. Trying to become the best web developer I can be. Currently working as a developer for <a href="https://www.publictrust.co.nz/" target="_blank" rel="noreferrer noopener">Public Trust</a>.</p>
+                    <p>I'm Soham. Trying to become the best web developer I can be. Currently Learning Web Development.</p>
                     <br />
-                    <p>When I'm not programming you will find me out mountain biking, exploring the great landscape New Zealand provides.
-                    If you are interested in getting in touch with me, feel free to <Link to="/contact">drop me a line</Link>.</p>
-                    <div className="home-bottom-buttons">
-                        <a href="https://github.com/puremana" target="_blank" rel="noreferrer noopener">
-                            <div className="button github">
-                                <span className="icon is-small"><i className="fab fa-github"></i></span>
-                                Github
-                            </div>
-                        </a>
-                        <a href="https://firebasestorage.googleapis.com/v0/b/portfolio-website-a71ab.appspot.com/o/Jeremy%20Shaw%20CV.pdf?alt=media&token=5f715bae-049a-4e90-bd23-5ac471839ba0" target="_blank" rel="noreferrer noopener">
-                            <div className="button CV">
-                                <span className="icon is-small"><i className="fa fa-arrow-circle-down"></i></span>
-                                Download CV
-                            </div>
-                        </a>
-                        <a href={"https://blog.jeremyshaw.co.nz?dark=" + this.props.mode}>
-                            <div className="button blog">
-                                <span className="icon is-small"><i className="fa fa-pencil-alt"></i></span>
-                                Blog
-                            </div>
-                        </a>
-                    </div>
+                    <p>When I'm not programming, you will find me exploring or engaging in other activities. If you are interested in getting in touch with me, feel free to <Link to="/contact">drop me a line</Link>.</p>
                 </div>
             </div>
         </div>
     );
-  }
 }
 
 export default Home;

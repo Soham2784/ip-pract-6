@@ -163,6 +163,47 @@ li:hover {
   -ms-user-select: none;
   user-select: none;
 }
+.profile-container {
+  display: flex;
+  align-items: center; /* Vertically aligns items */
+  margin: 20px; /* Adds space around the profile section */
+}
+
+.profile-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Ensures height matches width for circular effect */
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 15px; /* Space between image and text */
+  object-fit: cover; /* Ensures the image covers the circular area without stretching */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+}
+
+.profile-info h2 {
+  margin: 0; /* Removes default margin */
+  font-size: 24px; /* Larger font size for the name */
+}
+
+.profile-info ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+}
+
+.profile-info li {
+  display: flex; /* Aligns icon and text in a row */
+  align-items: center; /* Vertically centers icon with text */
+  margin-bottom: 5px; /* Space between items */
+}
+
+.profile-info .icon {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+
 .github {
   background: #444444;
   width: 80px;
